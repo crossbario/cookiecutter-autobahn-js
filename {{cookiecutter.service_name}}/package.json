@@ -1,0 +1,18 @@
+{
+    "name": "{{ cookiecutter.service_name }}",
+    "version": "0.1.0",
+    "description": "{{ cookiecutter.service_title }}",
+    "dependencies": {
+        "autobahn": ">=18.3.2"
+    },
+    "main": "client.js",
+    "scripts": {
+        "test": "echo \"error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/crossbario/cookiecutter-autobahn-js.git"
+    },
+    "author": "Crossbar.io Technologies GmbH",
+    "license": "MIT"
+}

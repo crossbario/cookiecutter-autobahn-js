@@ -1,2 +1,3 @@
 # cookiecutter-autobahn-js
-Cookiecutter project templates for AutobahnJS
+
+Cookiecutter project template for Autobahn JS.
