@@ -1,19 +1,25 @@
 // Example WAMP client for AutobahnJS connecting to a Crossbar.io WAMP router.
 
+var AUTOBAHN_DEBUG = true;
+
 // AutobahnJS, the WAMP client library to connect and talk to Crossbar.io:
 var autobahn = require('autobahn');
 
 console.log("Running AutobahnJS " + autobahn.version);
 
 // We read the connection parameters from the command line in this example:
-const url = process.env.CBURL;
-const realm = process.env.CBREALM;
+const url = "{{ cookiecutter.url }}" || process.env.CBURL;
+const realm = "{{ cookiecutter.realm }}" || process.env.CBREALM;
+
+console.log("url='" + url + "'");
+console.log("realm='" + realm + "'");
 
 // Make us a new connection ..
 var connection = new autobahn.Connection({
    url: url,
    realm: realm
 });
+
 
 // timers
 //
@@ -24,7 +30,7 @@ var t1, t2;
 //
 connection.onopen = function (session, details) {
 
-   console.log("Connected: ", session, details);
+   console.log("Connected: ", details);
 
    var componentId = details.authid;
    var componentType = "JavaScript/NodeJS";
