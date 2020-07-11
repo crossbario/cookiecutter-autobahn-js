@@ -3,7 +3,7 @@ build:
   context: {{ cookiecutter.service_name }}
   dockerfile: Dockerfile
 image: {{ 'img_' + cookiecutter.service_name }}
-user: "{{ cookiecutter.uid }}"
+user: "{{ cookiecutter.docker_uid }}"
 network_mode: host
 entrypoint: node
 command:

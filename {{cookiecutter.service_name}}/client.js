@@ -1,5 +1,11 @@
 // Example WAMP client for AutobahnJS connecting to a Crossbar.io WAMP router.
 
+const process = require('process')
+process.on('SIGINT', () => {
+   console.info("Interrupted")
+   process.exit(0)
+});
+
 var AUTOBAHN_DEBUG = true;
 
 // AutobahnJS, the WAMP client library to connect and talk to Crossbar.io:

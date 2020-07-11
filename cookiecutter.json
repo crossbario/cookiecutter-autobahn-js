@@ -1,20 +1,13 @@
 {
-    "service_title": "Microservice 1 (AutobahnJS based)",
-    "service_name": "microservice_1",
-
+    "service_title": "MyService (Autobahn|JS)",
+    "service_name": "myservice_abjs",
     "architecture": ["amd64", "armhf", "aarch64"],
     "footprint": ["full", "alpine"],
-    "version": ["18.3.2"],
-
+    "version": ["20.6.1"],
     "image": "{{ 'crossbario/autobahn-js' + ('' if cookiecutter.architecture == 'amd64' else ('-' + cookiecutter.architecture)) + ':' + cookiecutter.footprint + '-' + cookiecutter.version }}",
-
     "url": "ws://localhost:8080/ws",
     "realm": "realm1",
-
+    "docker_uid": 1000,
     "_copy_without_render": [
-    ],
-
-    "uid": null,
-    "service_uuid": null,
-    "generated": null
+    ]
 }
